@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+  
+  <div class="form-group">
+    <label for="simulations">Number of Simulations:</label>
+    <input type="number" id="simulations" [(ngModel)]="simulations" class="form-control">
+  </div>
+  
+  <div class="form-group">
+    <label for="switchDoor">Switch Door:</label>
+    <input type="checkbox" id="switchDoor" [(ngModel)]="switchDoor">
+  </div>
+  
+  <button class="btn btn-primary" (click)="startSimulation()">Start Simulation</button>
+  
+  <div *ngIf="result">
+    <h2>Simulation Results</h2>
+    <p>Wins by switching: {{ result.winsBySwitching }}</p>
+    <p>Wins by not switching: {{ result.winsByNotSwitching }}</p>
+    <p>Total simulations: {{ result.totalSimulations }}</p>
+  </div>
+</div>
