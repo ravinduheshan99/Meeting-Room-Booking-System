@@ -1,22 +1,83 @@
-<div class="container">
-  <h1>{{ title }}</h1>
-  
-  <div class="form-group">
-    <label for="simulations">Number of Simulations:</label>
-    <input type="number" id="simulations" [(ngModel)]="simulations" class="form-control">
-  </div>
-  
-  <div class="form-group">
-    <label for="switchDoor">Switch Door:</label>
-    <input type="checkbox" id="switchDoor" [(ngModel)]="switchDoor">
-  </div>
-  
-  <button class="btn btn-primary" (click)="startSimulation()">Start Simulation</button>
-  
-  <div *ngIf="result">
-    <h2>Simulation Results</h2>
-    <p>Wins by switching: {{ result.winsBySwitching }}</p>
-    <p>Wins by not switching: {{ result.winsByNotSwitching }}</p>
-    <p>Total simulations: {{ result.totalSimulations }}</p>
+<div class="container mt-5 p-4" style="background: linear-gradient(135deg, #5ee6c4 0%, #57c9d5 100%); border-radius: 15px; box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);">
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <div class="text-center mb-5">
+        <h1 class="display-4 text-justify lead py-4 shadow-lg" style="background: url('https://cdn.pixabay.com/photo/2023/07/19/18/58/abstract-8137323_1280.jpg') center/cover; border-radius: 15px; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);">
+          {{ title }}
+        </h1>
+      </div>
+      <div class="form-group">
+        <p class="mt-4 mb-5 text-justify lead" style="background-color: rgba(228, 226, 228, 0.8); padding: 25px; border-radius: 15px; box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.1);">
+          The Monty Hall problem is a probability puzzle based on the American television game show <em>Let's Make a Deal</em>. The game involves three doors, behind one of which is a car, and behind the other two are goats. The player picks a door, and then the host, who knows what is behind the doors, opens one of the other two doors to reveal a goat. The player is then given the option to change their choice of door.
+        </p>
+        <div class="d-flex justify-content-center col-lg-12">
+          <img
+            src="https://img.freepik.com/free-photo/front-view-front-door-with-brown-wall_23-2149360602.jpg?w=360&t=st=1722431150~exp=1722431750~hmac=b6c7fb53a527a75b10e4e0268365ae8116b562f02194d352c87b7f5832e73d1b"
+            alt="Door 1"
+            class="img-fluid shadow-lg rounded mx-2 hover-zoom"
+            height="300px"
+            width="300px"
+            style="transition: transform 0.3s ease-in-out;"
+          />
+          <img
+            src="https://img.freepik.com/free-photo/front-view-front-door-with-brown-wall_23-2149360602.jpg?w=360&t=st=1722431150~exp=1722431750~hmac=b6c7fb53a527a75b10e4e0268365ae8116b562f02194d352c87b7f5832e73d1b"
+            alt="Door 2"
+            class="img-fluid shadow-lg rounded mx-2 hover-zoom"
+            height="300px"
+            width="300px"
+            style="transition: transform 0.3s ease-in-out;"
+          />
+          <img
+            src="https://i.pinimg.com/originals/ea/ff/89/eaff8998edc8dd51cd312e9ef42dfc08.png"
+            alt="Door 3"
+            class="img-fluid shadow-lg rounded mx-2 hover-zoom"
+            height="300px"
+            width="300px"
+            style="transition: transform 0.3s ease-in-out;"
+          />
+        </div>
+        <div class="form-group mt-5">
+          <label for="simulations" class="form-label fw-bold text-justify lead">Number of Simulations:</label>
+          <input
+            type="number"
+            id="simulations"
+            [(ngModel)]="simulations"
+            class="form-control form-control-lg mt-2"
+            placeholder="Enter number of simulations"
+            style="border: 2px solid #57c9d5; border-radius: 10px;"
+          />
+        </div>
+        <div class="form-group mt-4">
+          <label for="switchDoor" class="form-label fw-bold text-justify lead">Switch Door:</label>
+          <div class="form-check form-switch">
+            <input
+              type="checkbox"
+              id="switchDoor"
+              [(ngModel)]="switchDoor"
+              class="form-check-input"
+              style="transform: scale(1.3);"
+            />
+            <label class="form-check-label text-justify lead" for="switchDoor">Switch Door?</label>
+          </div>
+        </div>
+        <div class="d-grid gap-2 mt-4">
+          <button class="btn btn-primary btn-lg shadow text-justify lead" (click)="startSimulation()" style="border-radius: 10px; background-color: #000000;">
+            Start Simulation
+          </button>
+        </div>
+      </div>
+      <div *ngIf="result" class="mt-5 bg-light p-4 rounded shadow">
+        <h2 class="text-center">Simulation Results</h2>
+        <p class="lead text-center">Wins by switching: {{ result.winsBySwitching }}</p>
+        <p class="lead text-center">Wins by not switching: {{ result.winsByNotSwitching }}</p>
+        <p class="lead text-center">Total simulations: {{ result.totalSimulations }}</p>
+      </div>
+    </div>
   </div>
 </div>
+
+<style>
+.hover-zoom:hover {
+  transform: scale(1.1);
+}
+</style>
