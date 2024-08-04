@@ -1,4 +1,4 @@
-# Monty Hall Simulation
+# Monty Hall Simulation Frontend
 
 This project is a web application that simulates the Monty Hall problem, a classic probability puzzle. The application allows users to run multiple simulations and analyze whether switching doors increases the chances of winning.
 
