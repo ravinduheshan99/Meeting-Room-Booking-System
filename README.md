@@ -6,6 +6,9 @@ This project is a web application that simulates the Monty Hall problem, a class
 
 The Monty Hall problem is based on a game show scenario where a contestant is presented with three doors. Behind one door is a car, and behind the other two doors are goats. After the contestant picks a door, the host, who knows what's behind the doors, opens one of the other two doors to reveal a goat. The contestant is then given the choice to stick with their original pick or switch to the other unopened door.
 
+## Demo
+![demo](https://github.com/ravinduheshan99/Monty-Hall-Front-End/blob/main/assets/demo.gif)
+
 ### Project Features:
 - **Simulation:** Users can specify the number of simulations and choose whether to switch doors after the host reveals a goat.
 - **Results Visualization:** The application displays the results of the simulations visually.
